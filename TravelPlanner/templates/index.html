@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<form>
+  <div class="form-group">
+    <label for="exampleInputEmail1">English_Word</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter english word">
+    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+  </div>
+
+<table border='1'>
+  <tr>
+    <th>English</th>
+    <th>Spanish</th>
+    <th>Others</th>
+  </tr>
+  {% for x in result %}
+    <tr>
+      <td>{{ x.english }}</td>
+        <td>{{ x.spanish }}</td>
+	<td>{{ x.others }}</td>
+    </tr>
+  {% endfor %}
+</table>
+
+<p>In views.py you can see how to import and fetch members from the database.</p>
+
+</body>
+</html>                  
