@@ -3,7 +3,7 @@ name: Deploy Django to Azure VM
 on:
   push:
     branches:
-      - main  # Change to your branch if needed
+      - master  # Change to your branch if needed
 
 jobs:
   deploy:
