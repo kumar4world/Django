@@ -23,13 +23,11 @@ jobs:
       - name: Deploy to Azure VM
         run: |
           ssh ${{ secrets.AZURE_VM_USER }}@${{ secrets.AZURE_VM_IP }} << 'EOF'
-            cd /home/${{ secrets.AZURE_VM_USER }}/django-app  # Change to your project path
-            git pull origin main  # Pull latest changes
+            git clone https://github.com/kumar4world/Django.git
+            #cd /home/${{ secrets.AZURE_VM_USER }}/django  # Change to your project path
+            #git pull origin main  # Pull latest changes
             source venv/bin/activate  # Activate virtual environment
             pip install -r requirements.txt  # Install dependencies
-            python manage.py migrate  # Apply database migrations
-            python manage.py collectstatic --noinput  # Collect static files
-            sudo systemctl restart gunicorn  # Restart Gunicorn
-            sudo systemctl restart nginx  # Restart Nginx (if using)
+            python TravelPlanner/manage.py migrate  # Apply database migrations
           EOF
 

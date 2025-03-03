@@ -1,0 +1,4 @@
+charset_normalizer
+psycopg2-binary
+Django
+requests
