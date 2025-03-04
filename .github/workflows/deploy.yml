@@ -29,7 +29,7 @@ jobs:
             sudo pip install --upgrade pip
             sudo pip install -r requirements.txt
             #git pull origin main  # Pull latest changes
-            sudo source venv/bin/activate  # Activate virtual environment
+            source venv/bin/activate  # Activate virtual environment
             sudo pip install -r requirements.txt  # Install dependencies
             #python TravelPlanner/manage.py migrate  # Apply database migrations
           EOF
