@@ -23,8 +23,11 @@ jobs:
       - name: Deploy to Azure VM
         run: |
           ssh ${{ secrets.AZURE_VM_USER }}@${{ secrets.AZURE_VM_IP }} << 'EOF'
-            git clone https://github.com/kumar4world/Django.git
-            #cd /home/${{ secrets.AZURE_VM_USER }}/django  # Change to your project path
+            #git clone https://github.com/kumar4world/Django.git
+            cd /home/${{ secrets.AZURE_VM_USER }}/Django  # Change to your project path
+            python3 -m venv venv
+            pip install --upgrade pip
+            pip install -r requirements.txt
             #git pull origin main  # Pull latest changes
             source venv/bin/activate  # Activate virtual environment
             pip install -r requirements.txt  # Install dependencies
